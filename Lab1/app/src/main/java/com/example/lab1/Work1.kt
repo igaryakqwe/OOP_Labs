@@ -5,6 +5,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.unit.sp
+import com.example.lab1.components.GroupSelector
 
 class Work1 {
     var isGroupListVisible by mutableStateOf(false)
@@ -24,8 +26,8 @@ class Work1 {
         }
 
         if (groupValue.isNotEmpty()) {
-            Text(text = "Обрана група")
-            Text(text = groupValue)
+            Text(fontSize = 20.sp, text = "Обрана група")
+            Text(fontSize = 20.sp, text = groupValue)
         }
     }
 }

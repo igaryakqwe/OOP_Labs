@@ -9,6 +9,7 @@ import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 
 class Navigation {
     companion object {
@@ -22,13 +23,13 @@ class Navigation {
                     onClick = { onDismiss() },
                     modifier = Modifier.padding(8.dp),
                 ) {
-                    Text("Відміна")
+                    Text(fontSize = 17.sp, text = "Відміна")
                 }
                 TextButton(
                     onClick = { onConfirm() },
                     modifier = Modifier.padding(8.dp),
                 ) {
-                    Text("Так")
+                    Text(fontSize = 17.sp, text = "Так")
                 }
             }
         }

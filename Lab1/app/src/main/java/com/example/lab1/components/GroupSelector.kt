@@ -1,3 +1,5 @@
+package com.example.lab1.components
+
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -7,34 +9,32 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
-import com.example.lab1.components.Navigation
 import com.example.lab1.values.Module1
 
 class GroupSelector() {
     companion object {
         @Composable
         fun GroupsDialog(showDialog: Boolean, onValueChange: (String) -> Unit) {
-            var value by remember { mutableStateOf<String>("") }
             var selectedGroupName by remember { mutableStateOf<String?>(null) }
             var showDialogState by remember { mutableStateOf(showDialog) }
 
             if (showDialogState) {
                 Dialog(onDismissRequest = { showDialogState = false }) {
                     Card(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .fillMaxHeight(1f)
-                            .padding(16.dp),
+                        modifier = Modifier.fillMaxWidth().fillMaxHeight(1f).padding(16.dp),
                         shape = RoundedCornerShape(16.dp),
                     ) {
                         Column(
-                            modifier = Modifier
-                                .fillMaxSize(),
+                            modifier = Modifier.fillMaxSize(),
                             verticalArrangement = Arrangement.Center,
                             horizontalAlignment = Alignment.CenterHorizontally,
                         ) {
-                            Text(modifier = Modifier.padding(10.dp), text = "Оберіть групу:")
+                            Text(
+                                modifier = Modifier.padding(10.dp),
+                                fontSize = 20.sp, text = "Оберіть групу:"
+                            )
                             GroupList(Module1.groups, selectedGroupName) { newValue ->
                                 selectedGroupName = newValue
                             }
@@ -82,7 +82,7 @@ class GroupSelector() {
                             },
                         )
                     ) {
-                        Text(text = groupName)
+                        Text(fontSize = 16.sp, text = groupName)
                     }
                 }
             }

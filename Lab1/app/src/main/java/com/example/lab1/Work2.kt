@@ -6,6 +6,8 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.text.input.TextFieldValue
+import androidx.compose.ui.unit.sp
+import com.example.lab1.components.TextInput
 
 class Work2 {
     var isTextInputVisible by mutableStateOf(false)
@@ -25,8 +27,8 @@ class Work2 {
         }
 
         if (inputValue.text.isNotEmpty()) {
-            Text(text = "Введений текст")
-            Text(text = inputValue.text)
+            Text(fontSize = 20.sp, text = "Введений текст")
+            Text(fontSize = 20.sp, text = inputValue.text)
         }
     }
 }
