@@ -3,12 +3,9 @@ package com.example.lab2test
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import com.example.lab2test.enums.ShapesEnum
-import com.example.lab2test.shapes.LineShape
-import com.example.lab2test.shapes.Shape
 
 class MainActivity : AppCompatActivity() {
     private lateinit var canvasView: CanvasView
@@ -33,22 +30,22 @@ class MainActivity : AppCompatActivity() {
         when (item.itemId) {
             R.id.point -> {
                 toolbar.title = item.title
-                canvasView.setCurrentShape(ShapesEnum.POINT)
+                canvasView.setCurrentEditor(ShapesEnum.POINT)
                 return true
             }
             R.id.line -> {
                 toolbar.title = item.title
-                canvasView.setCurrentShape(ShapesEnum.LINE)
+                canvasView.setCurrentEditor(ShapesEnum.LINE)
                 return true
             }
             R.id.rectangle -> {
                 toolbar.title = item.title
-                canvasView.setCurrentShape(ShapesEnum.RECTANGLE)
+                canvasView.setCurrentEditor(ShapesEnum.RECTANGLE)
                 return true
             }
             R.id.ellipse -> {
                 toolbar.title = item.title
-                canvasView.setCurrentShape(ShapesEnum.ELLIPSE)
+                canvasView.setCurrentEditor(ShapesEnum.ELLIPSE)
                 return true
             }
             else -> {

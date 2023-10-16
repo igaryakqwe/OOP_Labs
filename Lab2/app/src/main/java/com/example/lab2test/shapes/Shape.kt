@@ -8,11 +8,10 @@ abstract class Shape(
     open var startY: Float,
     open var endX: Float,
     open var endY: Float,
-    open var color: Int
 ) {
-    abstract fun draw(canvas: Canvas, paint: Paint)
+    abstract var paint: Paint
 
-    abstract fun update(newEndX: Float, newEndY: Float, newColor: Int)
+    abstract fun draw(canvas: Canvas)
 
-    abstract fun clone(): Shape
+    abstract fun update(newEndX: Float, newEndY: Float)
 }

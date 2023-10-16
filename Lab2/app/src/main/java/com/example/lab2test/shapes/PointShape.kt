@@ -9,27 +9,25 @@ class PointShape(
     override var startY: Float,
     override var endX: Float,
     override var endY: Float,
-    override var color: Int
 ): Shape(
     startX,
     startY,
     endX,
     endY,
-    color
 ) {
-    override fun draw(canvas: Canvas, paint: Paint) {
-        paint.color = color
+    override var paint = Paint()
+
+    init {
+        paint.strokeWidth = 10f
+    }
+
+    override fun draw(canvas: Canvas) {
+        paint.color = paint.color
         canvas.drawOval(RectF(endX - 5f, endY - 5f, endX + 5f, endY + 5f), paint)
     }
 
-    override fun update(newEndX: Float, newEndY: Float, newColor: Int) {
+    override fun update(newEndX: Float, newEndY: Float) {
         endX = newEndX
         endY = newEndY
-        color = newColor
     }
-
-    override fun clone(): PointShape {
-        return PointShape(startX, startY, endX, endY, color)
-    }
-
 }

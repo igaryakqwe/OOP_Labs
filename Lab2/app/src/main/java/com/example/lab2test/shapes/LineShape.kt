@@ -8,21 +8,25 @@ class LineShape(
     startY: Float,
     endX: Float,
     endY: Float,
-    color: Int
-): Shape(startX, startY, endX, endY, color) {
+): Shape(
+    startX,
+    startY,
+    endX,
+    endY,
+) {
+    override var paint = Paint()
 
-    override fun draw(canvas: Canvas, paint: Paint) {
-        paint.color = color
+    init {
+        paint.strokeWidth = 10f
+        paint.color = 0xFF0000FF.toInt()
+    }
+
+    override fun draw(canvas: Canvas) {
         canvas.drawLine(startX, startY, endX, endY, paint)
     }
 
-    override fun update(newEndX: Float, newEndY: Float, newColor: Int) {
+    override fun update(newEndX: Float, newEndY: Float) {
         endX = newEndX
         endY = newEndY
-        color = newColor
-    }
-
-    override fun clone(): LineShape {
-        return LineShape(startX, startY, endX, endY, color)
     }
 }

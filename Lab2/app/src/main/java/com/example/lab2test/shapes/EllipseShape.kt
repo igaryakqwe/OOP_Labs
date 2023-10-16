@@ -2,34 +2,39 @@ package com.example.lab2test.shapes
 
 import android.graphics.Canvas
 import android.graphics.Paint
-import android.graphics.RectF
 
 class EllipseShape (
     override var startX: Float,
     override var startY: Float,
     override var endX: Float,
     override var endY: Float,
-    override var color: Int
 ): Shape(
     startX,
     startY,
     endX,
     endY,
-    color
 ) {
-    override fun draw(canvas: Canvas, paint: Paint) {
-        paint.color = color
-        canvas.drawOval(startX, startY, endX, endY, paint)
+    override var paint = Paint()
+
+    init {
+        paint.strokeWidth = 10f
     }
 
-    override fun update(newEndX: Float, newEndY: Float, newColor: Int) {
+    override fun draw(canvas: Canvas) {
+        val dx = 2 * startX - endX
+        val dy = 2 * startY - endY
+
+        paint.style = Paint.Style.FILL
+        paint.color = 0xFFFFFFFF.toInt()
+        canvas.drawOval(dx, dy, endX, endY, paint)
+
+        paint.style = Paint.Style.STROKE
+        paint.color = 0xFF000000.toInt()
+        canvas.drawOval(dx, dy, endX, endY, paint)
+    }
+
+    override fun update(newEndX: Float, newEndY: Float) {
         endX = newEndX
         endY = newEndY
-        color = newColor
     }
-
-    override fun clone(): PointShape {
-        return PointShape(startX, startY, endX, endY, color)
-    }
-
 }
