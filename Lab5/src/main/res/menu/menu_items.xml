@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:title="@string/point"
+        android:icon="@drawable/ic_point"
+        android:onClick="onPointButtonClick"
+        app:showAsAction="always"/>
+
+    <item android:title="@string/line"
+        android:icon="@drawable/ic_line"
+        android:onClick="onLineButtonClick"
+        app:showAsAction="always"/>
+
+    <item android:title="@string/rectangle"
+        android:icon="@drawable/ic_rectangle"
+        android:onClick="onRectangleButtonClick"
+        app:showAsAction="always"/>
+
+    <item android:title="@string/ellipse"
+        android:icon="@drawable/ic_ellipse"
+        android:onClick="onEllipseButtonClick"
+        app:showAsAction="always"/>
+
+    <item android:title="@string/cube"
+        android:icon="@drawable/ic_cube"
+        android:onClick="onCubeButtonClick"
+        app:showAsAction="always"/>
+
+    <item android:title="@string/lineOO"
+        android:icon="@drawable/ic_lineoo"
+        android:onClick="onLineOOButtonClick"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/point"
+        android:title="@string/point"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/line"
+        android:title="@string/line"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/rectangle"
+        android:title="@string/rectangle"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/ellipse"
+        android:title="@string/ellipse"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/cube"
+        android:title="@string/cube"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/lineOO"
+        android:title="@string/lineOO"
+        app:showAsAction="never"/>
+</menu>
